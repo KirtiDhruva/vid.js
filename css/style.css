@@ -1,0 +1,129 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.player {
+    box-shadow: 10px 10px 15px 1px darkgray;
+    display: grid;
+    overflow: hidden;
+
+    grid-template-columns: 100%;
+    grid-template-rows: auto minmax(0px, 400px);
+
+    @media(min-width: 720px) {
+        grid-template-columns: auto 400px;
+        grid-template-rows: 100%;
+    }
+}
+
+.video-manager {
+    background-color: black;
+    overflow: hidden;
+
+    :hover {
+        border: 1px solid gray;
+    }
+}
+
+
+video {
+    width: 100%;
+    height: 100%;
+}
+
+.playlist-manager {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    gap: 5px;
+}
+
+.playlist-manager>.search {
+    height: 2lh;
+    font-size: 18px;
+    border-radius: 20px;
+    padding: 0 15px;
+    color: darkblue;
+    margin: 5px;
+}
+
+.playlist {
+    background-color: black;
+    flex: 1 0;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.playlist-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 10px;
+    gap: 15px;
+    border-bottom: 1px dotted grey;
+}
+
+.playlist-item p {
+    color: white;
+    overflow: hidden;
+}
+
+.playlist-item .playlist-item-toolbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 2px;
+}
+
+.active {
+    background-color: darkgreen;
+}
+
+.paused {
+    background-color: darkred;
+}
+
+.toolbar-status {
+    flex: 0 0 auto;
+    text-align: start;
+}
+
+.toolbar-buttons {
+    display: flex;
+    gap: 5px
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    background-color: aliceblue;
+    /* flex-wrap: wrap; */
+}
+
+.toolbar>* {
+    flex: 1 1 80px;
+}
+
+
+.toolbar>button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+
+    &:hover {
+        scale: 1.05;
+    }
+}
